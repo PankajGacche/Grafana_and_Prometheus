@@ -5,33 +5,33 @@
 - Clone the below github repository GitHub repository:-
 git clone https://github.com/UnpredictablePrashant/TravelMemory.git
 
-![alt text](README_Images\image.png)
+![alt text](README_Images/image.png)
 
 # Step 2: Install Dependencies:
 - Navigate to the frontend/ and backend/ folders, and install dependencies:
 
-![alt text](README_Images\image-1.png)
+![alt text](README_Images/image-1.png)
 
 - For backend:
 
-![alt text](README_Images\image-2.png)
+![alt text](README_Images/image-2.png)
 
 # Step 3: Set up environment variables as below:
 
-![alt text](README_Images\image-3.png)
+![alt text](README_Images/image-3.png)
 
 # Step 4: Create a .env file in both backend directories with necessary environment variables (e.g., MongoDB connection string, its port ,etc).
 
 # Step 5: Run the MERN application: 
 - Open two terminals: one for the frontend and one for the backend.
 
-![alt text](README_Images\image-4.png)
+![alt text](README_Images/image-4.png)
 
 - For frontend:
 
 - You need to hit npm start in the frontend directory of the project.
 
-![alt text](README_Images\image-5.png)
+![alt text](README_Images/image-5.png)
 
 # Step6. Integrate Prometheus for Node.js Backend Metrics:
 
@@ -40,12 +40,12 @@ git clone https://github.com/UnpredictablePrashant/TravelMemory.git
 - Step 1: Install Prometheus client library
 In the backend, install the Prometheus client for Node.js. By hitting below command “npm install prom-client".
 
-![alt text](README_Images\image-6.png)
+![alt text](README_Images/image-6.png)
 
 - Step 2: Expose Prometheus metrics
 In your backend/server.js, import the prom-client package and expose metrics like API response times, request counts, and error rates.
 
-![alt text](README_Images\image-7.png)
+![alt text](README_Images/image-7.png)
 
 - Step 3: Set up MongoDB monitoring
 - Use MongoDB Exporter to monitor the database.
@@ -58,20 +58,20 @@ In your backend/server.js, import the prom-client package and expose metrics lik
 - Step 4: Configure Prometheus:
 - Set up a prometheus.yml configuration file to scrape your Node.js backend and MongoDB exporter.
 
-![alt text](README_Images\image-8.png)
+![alt text](README_Images/image-8.png)
 
 # 3. Enhance Grafana Dashboards
 
 - Step 1: Install and set up Grafana
 - Install Grafana and configure Prometheus as a data source.
 
-![alt text](README_Images\image-9.png)
+![alt text](README_Images/image-9.png)
 
 - Open Grafana UI at http://localhost:3000
 
-![alt text](README_Images\image-10.png)
+![alt text](README_Images/image-10.png)
 
-![alt text](README_Images\image-11.png)
+![alt text](README_Images/image-11.png)
 
 - Needs to login as admin in uername and password section you need to hit admin as well then you can change you password to your choice and proceeed further.
 
@@ -84,9 +84,9 @@ In your backend/server.js, import the prom-client package and expose metrics lik
 - Step 1: Install Loki and Promtail
 - Use Loki for log aggregation.
 
-![alt text](README_Images\image-12.png)
+![alt text](README_Images/image-12.png)
 
-![alt text](README_Images\image-13.png)
+![alt text](README_Images/image-13.png)
 
 - Step 2: Configure Prom tail to collect logs:
 - Create a promtail-config.yml file to scrape logs from your Node.js application.
@@ -104,32 +104,32 @@ docker run -d --name=jaeger -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775/udp 
 -p 16686:16686 -p 14268:14268 -p 14250:14250 \
 -p 9411:9411 jaegertracing/all-in-one:1.32
 
-![alt text](README_Images\image-14.png)
+![alt text](README_Images/image-14.png)
 
 - Step 2: Integrate Jaeger with Node.js
 - Use OpenTelemetry to send traces to Jaeger.
 
-![alt text](README_Images\image-15.png)
+![alt text](README_Images/image-15.png)
 
 - Modify your backend to send traces to Jaeger:
 - This will start Jaeger, and you can access the Jaeger UI at http://localhost:16686
 
-![alt text](README_Images\image-16.png)
+![alt text](README_Images/image-16.png)
 
 - Step 1: Install OpenTelemetry for Node.js
 - Installed the necessary OpenTelemetry libraries for tracing:
 
-![alt text](README_Images\image-17.png)
+![alt text](README_Images/image-17.png)
 
 Step 3: Modify index.js to Enable Tracing:
 
 - Create a new file (optional for better organization): Create a file named tracing.js to configure OpenTelemetry. This will keep your code cleaner.
 
-![alt text](README_Images\image-18.png)
+![alt text](README_Images/image-18.png)
 
 - 2. Modify index.js: Import tracing.js at the top of your index.js file so that the tracing is initialized when the backend starts.
 
-![alt text](README_Images\image-19.png)
+![alt text](README_Images/image-19.png)
 
 # 6. Alerting and Anomaly Detection:
 - Step 1: Create Alerting Rules
@@ -143,7 +143,7 @@ Step 3: Modify index.js to Enable Tracing:
 
 - Visit the official Alertmanager releases page on GitHub:
 
-![alt text](README_Images\image-20.png)
+![alt text](README_Images/image-20.png)
 
 - Download the appropriate version for your system:
 - alertmanager-0.27.0.illumos-amd64.tar.gz in my case.
@@ -151,17 +151,17 @@ Step 3: Modify index.js to Enable Tracing:
 
 https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanager-0.26.0.linux-amd64.tar.gz
 
-![alt text](README_Images\image-21.png)
+![alt text](README_Images/image-21.png)
 
 - Step 2: Extract the Files:
 - Extract the downloaded file to a directory:
 - For Linux/macOS:
 
-![alt text](README_Images\image-22.png)
+![alt text](README_Images/image-22.png)
 
 - Navigate to the extracted folder:
 
-![alt text](README_Images\image-23.png)
+![alt text](README_Images/image-23.png)
 
 - Step 3: Configure Alertmanager:
 
@@ -171,15 +171,15 @@ https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanage
 
 - Step 4: Run Alertmanager:
 
-![alt text](README_Images\image-24.png)
+![alt text](README_Images/image-24.png)
 
-![alt text](README_Images\image-25.png)
+![alt text](README_Images/image-25.png)
 
 - Step 5: Integrate Alertmanager with Prometheus:
 
 - prometheus.yml:
 
-![alt text](README_Images\image-26.png)
+![alt text](README_Images/image-26.png)
 
 
 # Travel Memory
@@ -203,7 +203,7 @@ Data format to be added:
     "totalCost": 800000,
     "tripType": "leisure",
     "experience": "Lorem Ipsum, Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum,Lorem Ipsum, ",
-    "README_Images\image": "https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg",
+    "README_Images/image": "https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg",
     "shortDescription":"India is a wonderful country with rich culture and good people.",
     "featured": true
 }
