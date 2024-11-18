@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s  # How often Prometheus will scrape the metrics (adjust as needed)
+
+scrape_configs:
+  - job_name: 'backend_metrics'  # Name of your job
+    metrics_path: '/metrics'  # Path where metrics are exposed (default is /metrics)
+    static_configs:
+      - targets: ['localhost:3001']  # The backend service URL (adjust if running elsewhere)
+rule_files:
+  - "alert.rules.yml"  # Path to your alerting rules file
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - 'localhost:9093'  # Assuming Alertmanager is running locally

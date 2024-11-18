@@ -1,0 +1,28 @@
+route:
+  group_by: ['alertname', 'instance']  # Group by alertname and instance for better granularity
+  group_wait: 30s                       # Wait 30 seconds before sending the first notification
+  group_interval: 5m                    # Wait 5 minutes before sending additional notifications
+  repeat_interval: 1h                   # Resend notifications every hour if the alert is still firing
+  routes:                                # Nested routes for specific alert types
+    - match:
+        severity: critical               # Match critical alerts
+      receiver: 'web.hook'               # Send critical alerts to the webhook
+      continue: true                     # Continue processing other routes
+
+    - match:
+        severity: warning                 # Match warning alerts
+      receiver: 'web.hook'                # Send warning alerts to the same webhook
+      continue: false                    # Stop processing further routes for warnings
+
+    - match:
+        severity: info                    # Match info alerts
+      receiver: 'web.hook'                # Send info alerts to the same webhook
+      continue: false                    # Stop processing further routes for info
+
+receivers:
+  - name: 'web.hook'
+    webhook_configs:
+      - url: 'http://127.0.0.1:5001/'     # Webhook URL to send alerts to
+
+inhibit_rules:
+  - source_match:
