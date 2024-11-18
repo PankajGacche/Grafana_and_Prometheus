@@ -1,13 +1,13 @@
 
-## Graded Assignment on MERN Application with Grafana and Prometheus
+# Graded Assignment on MERN Application with Grafana and Prometheus
 
-# Step 1. MERN Application Setup:
+## Step 1. MERN Application Setup:
 - Clone the below github repository GitHub repository:-
 git clone https://github.com/UnpredictablePrashant/TravelMemory.git
 
 ![alt text](README_Images/image.png)
 
-# Step 2: Install Dependencies:
+## Step 2: Install Dependencies:
 - Navigate to the frontend/ and backend/ folders, and install dependencies:
 
 ![alt text](README_Images/image-1.png)
@@ -16,13 +16,13 @@ git clone https://github.com/UnpredictablePrashant/TravelMemory.git
 
 ![alt text](README_Images/image-2.png)
 
-# Step 3: Set up environment variables as below:
+## Step 3: Set up environment variables as below:
 
 ![alt text](README_Images/image-3.png)
 
-# Step 4: Create a .env file in both backend directories with necessary environment variables (e.g., MongoDB connection string, its port ,etc).
+## Step 4: Create a .env file in both backend directories with necessary environment variables (e.g., MongoDB connection string, its port ,etc).
 
-# Step 5: Run the MERN application: 
+## Step 5: Run the MERN application: 
 - Open two terminals: one for the frontend and one for the backend.
 
 ![alt text](README_Images/image-4.png)
@@ -33,9 +33,9 @@ git clone https://github.com/UnpredictablePrashant/TravelMemory.git
 
 ![alt text](README_Images/image-5.png)
 
-# Step6. Integrate Prometheus for Node.js Backend Metrics:
+## Step6. Integrate Prometheus for Node.js Backend Metrics:
 
-# 2. Integrate Prometheus for Node.js Backend Metrics:
+## 2. Integrate Prometheus for Node.js Backend Metrics:
 
 - Step 1: Install Prometheus client library
 In the backend, install the Prometheus client for Node.js. By hitting below command “npm install prom-client".
@@ -60,7 +60,7 @@ In your backend/server.js, import the prom-client package and expose metrics lik
 
 ![alt text](README_Images/image-8.png)
 
-# 3. Enhance Grafana Dashboards
+## 3. Enhance Grafana Dashboards
 
 - Step 1: Install and set up Grafana
 - Install Grafana and configure Prometheus as a data source.
@@ -80,7 +80,7 @@ In your backend/server.js, import the prom-client package and expose metrics lik
 - MongoDB health (connections, memory usage, query time)
 - Frontend performance (use Prometheus metrics if applicable)
 
-# 4. Log Aggregation with Loki:
+## 4. Log Aggregation with Loki:
 - Step 1: Install Loki and Promtail
 - Use Loki for log aggregation.
 
@@ -95,7 +95,7 @@ In your backend/server.js, import the prom-client package and expose metrics lik
 - Add Loki as a data source in Grafana.
 - Create dashboards to visualize logs in Grafana.
 
-# 5. Implement Distributed Tracing with Jaeger:
+## 5. Implement Distributed Tracing with Jaeger:
 - Step 1: Install Jaeger
 - Run Jaeger as a Docker container.
 
@@ -131,7 +131,7 @@ Step 3: Modify index.js to Enable Tracing:
 
 ![alt text](README_Images/image-19.png)
 
-# 6. Alerting and Anomaly Detection:
+## 6. Alerting and Anomaly Detection:
 - Step 1: Create Alerting Rules
 - Set up alerting rules in Prometheus for application-specific metrics, such as response time exceeding a threshold.
 
@@ -182,7 +182,7 @@ https://github.com/prometheus/alertmanager/releases/download/v0.26.0/alertmanage
 ![alt text](README_Images/image-26.png)
 
 
-# Travel Memory
+## Travel Memory
 
 `.env` file to work with the backend after creating a database in mongodb: 
 
@@ -208,7 +208,7 @@ Data format to be added:
     "featured": true
 }
 ```
- # steps to deploy the travel memoey application on the aws ec2 #
+ ## steps to deploy the travel memoey application on the aws ec2 ##
 
 The TravelMemory application has been developed using the MERN stack. 
 
